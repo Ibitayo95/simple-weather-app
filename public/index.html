@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <section class="vh-100">
+      <div class="container py-5 h-100">
+        <img id="logo" src="images/mountain.png" alt="" />
+        <div
+          id="widerBox"
+          class="row d-flex justify-content-center align-items-center h-100"
+        >
+          <div id="weatherCard" class="col-md-8 col-lg-6 col-xl-4">
+            <h3 class="mb-4 pb-2 fw-normal">Ibi's Simple Weather Guide</h3>
+
+            <div id="cityBlock" class="input-group rounded mb-3">
+              <form id="myForm">
+                <input
+                  id="city"
+                  type="search"
+                  name="cityName"
+                  class="form-control rounded"
+                  placeholder="City"
+                  aria-label="Search"
+                  aria-describedby="search-addon"
+                />
+                <p id="errorMessage"></p>
+                <a type="button">
+                  <span id="search-addon"> Check! </span>
+                </a>
+              </form>
+            </div>
+
+            <div class="mb-4 pb-2">
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="inlineRadioOptions"
+                  id="inlineRadio1"
+                  value="option1"
+                  checked
+                />
+                <label class="form-check-label" for="inlineRadio1"
+                  >Celsius</label
+                >
+              </div>
+
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="inlineRadioOptions"
+                  id="inlineRadio2"
+                  value="option2"
+                />
+                <label class="form-check-label" for="inlineRadio2"
+                  >Farenheit</label
+                >
+              </div>
+            </div>
+
+            <div class="card-body">
+              <h4 id="place" class="mb-1 sfw-normal">
+                <h5 id="country"></h5>
+              </h4>
+              <p class="mb-2">
+                Current temperature: <strong id="curTemp"></strong>
+              </p>
+              <p>Feels like: <strong id="feelLike"></strong></p>
+              <p>
+                Max: <strong id="mxTemp"></strong>, Min:
+                <strong id="mnTemp"></strong>
+              </p>
+
+              <div id="bottomCard" class="d-flex flex-row align-items-center">
+                <p id="description" class="mb-0 me-4">Weather Description:</p>
+                <i class="fas fa-cloud fa-3x" style="color: #eee"></i>
+              </div>
+            </div>
+            <p id="opinionWrap">
+              Ibi's two cents: <strong id="opinion"></strong>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script type="module" src="weather.js"></script>
+  </body>
+</html>
