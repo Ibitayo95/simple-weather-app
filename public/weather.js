@@ -12,7 +12,7 @@ const celsius = document.getElementById("inlineRadio1");
 const farenheit = document.getElementById("inlineRadio2");
 const message = document.getElementById("errorMessage");
 const opinion = document.getElementById("opinion");
-const url = "http://localhost:3000/weather";
+const url = "http://localhost:3001/weather";
 
 // event listeners
 farenheit.addEventListener("click", () => {
