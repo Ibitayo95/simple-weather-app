@@ -1,7 +1,11 @@
 import React from "react";
 
-function Header() {
-  return <h1>Simple Weather App</h1>;
+const style = {
+  color: "purple",
+};
+
+function Header(props) {
+  return <h1 style={style}>{props.text}</h1>;
 }
 
 export default Header;
