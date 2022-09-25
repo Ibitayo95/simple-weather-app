@@ -1,31 +1,39 @@
-import React from "react";
-
-const style = {
-  width: "20%",
-  padding: "12px 20px",
-  margin: "8px 0",
-  display: "inline-block",
-  border: "1px solid #ccc",
-  borderRadius: "20px",
-  boxSizing: "border-box",
-};
+import React, { useState } from "react";
+import Button from "@material-ui/core/Button";
+import TextField from "@material-ui/core/TextField";
+import SendIcon from "@material-ui/icons/Send";
 
 function Input(props) {
+  const [userLocation, setUserLocation] = useState("");
+
+  function handleChange(event) {
+    let value = event.target.value;
+    setUserLocation(value); // use to update what location the user entered
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    props.userInput(userLocation); // change the parent component's state with input
+  }
+
   return (
     <div>
-      <form>
-        <label for="locationInput"></label>
-        <input
-          style={style}
-          type="text"
-          id="locationInput"
-          name="location"
-          placeholder="Enter a City or Postcode..."
+      <form autoComplete="off" onSubmit={handleSubmit}>
+        <TextField
+          onChange={handleChange}
+          id="outlined-basic"
+          label="Enter a city or Postcode"
+          variant="outlined"
+          size="small"
         />
-        <button style={style} type="submit" value="Submit">
-          {" "}
-          Submit
-        </button>
+        <Button
+          type="submit"
+          style={{ backgroundColor: "purple", color: "white" }}
+          variant="contained"
+          endIcon={<SendIcon />}
+        >
+          Get Weather
+        </Button>
       </form>
     </div>
   );

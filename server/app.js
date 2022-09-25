@@ -4,6 +4,9 @@ const express = require("express"),
   https = require("https"),
   port = 3001;
 
+const cors = require("cors");
+app.use(cors());
+
 // support parsing of application/json type post data
 app.use(express.static("public"));
 app.use(bodyParser.json());
@@ -19,7 +22,7 @@ app.get("/", (req, res) => {
 app.post("/weather", (req, res) => {
   const userInput = req.body.cityName;
   const query = userInput;
-  const appId = "37517b5371818801b490caba360fd0e5";
+  const appId = "4fce6d7cf2c4d7ffad6c3e3d686ad506";
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${appId}`;
 
   https.get(url, function (response) {
