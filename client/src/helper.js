@@ -8,6 +8,4 @@ function kelvinToFahrenheit(kelvin) {
   return `${conversion}°F`;
 }
 
-// need to make celsius to fahrenheit and vice versa for toggle functionality
-
 export { kelvinToCelsius, kelvinToFahrenheit };
