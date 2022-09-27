@@ -1,11 +1,8 @@
 import React from "react";
-
-const style = {
-  color: "purple",
-};
+import "./Header.css";
 
 function Header(props) {
-  return <h1 style={style}>{props.text}</h1>;
+  return <h1>{props.text}</h1>;
 }
 
 export default Header;

@@ -1,11 +1,12 @@
 import React from "react";
+import "./Stat.css";
 
 function Stat(props) {
   return (
-    <div>
-      <p>
-        {props.statistic} -{">"} {props.value}
-      </p>
+    <div className="statBox">
+      <p className="stat">{props.statistic}</p>
+      {props.icon}
+      <p className="val">{props.value}</p>
     </div>
   );
 }

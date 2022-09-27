@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import Button from "@material-ui/core/Button";
+import IconButton from "@mui/material/IconButton";
 import TextField from "@material-ui/core/TextField";
 import SendIcon from "@material-ui/icons/Send";
+import "./Input.css";
 
 function Input(props) {
   const [userLocation, setUserLocation] = useState("");
@@ -22,18 +23,14 @@ function Input(props) {
         <TextField
           onChange={handleChange}
           id="outlined-basic"
-          label="Enter a city or Postcode"
+          label="Enter a city name"
           variant="outlined"
           size="small"
+          color="primary"
         />
-        <Button
-          type="submit"
-          style={{ backgroundColor: "purple", color: "white" }}
-          variant="contained"
-          endIcon={<SendIcon />}
-        >
-          Get Weather
-        </Button>
+        <IconButton aria-label="send" type="submit">
+          <SendIcon style={{ color: "#FFC4C4" }} />
+        </IconButton>
       </form>
     </div>
   );

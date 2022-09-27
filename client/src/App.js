@@ -35,7 +35,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header text="Simple Weather App" />
+      <Header text="Ibi's Super Cool Weather App :)" />
       <Input
         userInput={(location) => {
           setUserInput(location);

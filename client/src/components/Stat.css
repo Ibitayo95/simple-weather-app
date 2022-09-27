@@ -1,0 +1,17 @@
+.statBox {
+    display: inline-table;
+    margin: 5%;
+}
+
+p {
+    font-family: 'Jua', sans-serif;
+    font-size: large;
+}
+
+.stat {
+    color: #FFC4C4;
+}
+
+.val {
+    color: azure;
+}
