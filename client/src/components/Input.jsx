@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import IconButton from "@mui/material/IconButton";
-import TextField from "@material-ui/core/TextField";
-import SendIcon from "@material-ui/icons/Send";
+import TextField from "@mui/material/TextField";
+import SendIcon from "@mui/icons-material/Send";
 import "./Input.css";
 
 function Input(props) {
   const [userLocation, setUserLocation] = useState("");
+  // const [inputError, setInputError] = useState(false);
 
   function handleChange(event) {
     let value = event.target.value;
@@ -27,9 +28,11 @@ function Input(props) {
           variant="outlined"
           size="small"
           color="primary"
+          error={props.noLocation}
+          helperText={props.noLocation && "City not found."}
         />
         <IconButton aria-label="send" type="submit">
-          <SendIcon style={{ color: "#FFC4C4" }} />
+          <SendIcon color="primary" />
         </IconButton>
       </form>
     </div>

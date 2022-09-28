@@ -1,10 +1,28 @@
 import "./App.css";
-// import {kelvinToCelsius, kelvinToFahrenheit} from "./helper";
 import Header from "./components/Header";
 import WeatherCard from "./components/WeatherCard";
 import Input from "./components/Input";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useState, useEffect } from "react";
 const url = "http://localhost:3001/weather";
+
+const theme = createTheme({
+  typography: {
+    fontFamily: "'Jua', sans-serif",
+  },
+  palette: {
+    mode: "dark",
+    primary: {
+      main: "#FFC4C4",
+    },
+    secondary: {
+      main: "#533483",
+    },
+    dark: {
+      main: "#16213E",
+    },
+  },
+});
 
 function App() {
   const [userInput, setUserInput] = useState("");
@@ -34,23 +52,26 @@ function App() {
   }, [userInput]);
 
   return (
-    <div className="App">
-      <Header text="Ibi's Super Cool Weather App :)" />
-      <Input
-        userInput={(location) => {
-          setUserInput(location);
-        }}
-      />
-      <WeatherCard
-        name={weatherData?.name}
-        country={weatherData?.sys?.country}
-        curTemp={weatherData?.main?.temp}
-        feelsLike={weatherData?.main?.feels_like}
-        maxTemp={weatherData?.main?.temp_max}
-        minTemp={weatherData?.main?.temp_min}
-        descrip={weatherData?.weather?.[0].description}
-      />
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        <Header text="Ibi's Simple Weather Guide 2.0" />
+        <Input
+          userInput={(location) => {
+            setUserInput(location);
+          }}
+          noLocation={weatherData?.cod === "404"}
+        />
+        <WeatherCard
+          name={weatherData?.name}
+          country={weatherData?.sys?.country}
+          curTemp={weatherData?.main?.temp}
+          feelsLike={weatherData?.main?.feels_like}
+          maxTemp={weatherData?.main?.temp_max}
+          minTemp={weatherData?.main?.temp_min}
+          descrip={weatherData?.weather?.[0].description}
+        />
+      </div>
+    </ThemeProvider>
   );
 }
 
