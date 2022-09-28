@@ -1,6 +1,9 @@
 {
   "name": "simple-weather-app",
   "version": "1.0.0",
+  "engines": {
+    "node": "18.8"
+  },
   "description": "",
   "main": "server/app.js",
   "scripts": {
