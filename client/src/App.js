@@ -4,7 +4,7 @@ import WeatherCard from "./components/WeatherCard";
 import Input from "./components/Input";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useState, useEffect } from "react";
-const url = "http://localhost:3001/weather";
+const url = "/weather";
 
 const theme = createTheme({
   typography: {

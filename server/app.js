@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express"),
   app = express(),
   bodyParser = require("body-parser"),
@@ -26,7 +27,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.post("/weather", (req, res) => {
   const userInput = req.body.cityName;
   const query = userInput;
-  const appId = "4fce6d7cf2c4d7ffad6c3e3d686ad506";
+  const appId = process.env.API_KEY;
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${appId}`;
 
   https.get(url, function (response) {
